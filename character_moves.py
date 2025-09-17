@@ -50,7 +50,11 @@ def move_circle():
 
     x, y = 400, 90
 
+def move_triangle():
+    pass
 
 while True:
     move_rectangle()
     move_circle()
+    move_triangle()
+
