@@ -1,4 +1,5 @@
 from pico2d import *
+import math
 
 open_canvas()
 
@@ -6,6 +7,9 @@ grass = load_image('grass.png')
 character = load_image('character.png')
 
 x, y = 400, 90
+r = 235
+cx, cy = 405, 325
+d = 5
 
 def move_rectangle():
     global x, y
@@ -30,7 +34,21 @@ def move_rectangle():
 
 
 def move_circle():
-   pass
+    global x, y
+    angle = 360
+    while angle > 0:
+        clear_canvas_now()
+        grass.draw_now(400, 30)
+        character.draw_now(x, y)
+
+        radian = math.radians(angle)
+        x = int(cx + r * math.cos(radian))
+        y = int(cy + r * math.sin(radian))
+        angle = angle - d
+
+        delay(0.01)
+
+    x, y = 400, 90
 
 
 while True:
