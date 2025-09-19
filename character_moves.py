@@ -53,6 +53,9 @@ def move_circle():
 def move_triangle():
     global x, y
 
+    dx = 2
+    dy = 2.45
+
     for _ in range(192):
         clear_canvas_now()
         grass.draw_now(400, 30)
@@ -60,6 +63,15 @@ def move_triangle():
         x += 2
         delay(0.01)
     x, y = 784, 90
+
+    for _ in range(192):
+        clear_canvas_now()
+        grass.draw_now(400, 30)
+        character.draw_now(x, y)
+        x -= dx
+        y += dy
+        delay(0.01)
+    x, y = 400, 560
 
 while True:
     move_rectangle()
