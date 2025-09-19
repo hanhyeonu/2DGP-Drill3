@@ -67,7 +67,7 @@ def move_triangle():
     for _ in range(192):
         clear_canvas_now()
         grass.draw_now(400, 30)
-        character.draw_now(x, y)
+        character.draw_now(int(x), int(y))
         x -= dx
         y += dy
         delay(0.01)
